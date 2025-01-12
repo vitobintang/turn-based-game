@@ -14,18 +14,21 @@ This project is a simple core loop of a turn based game.
     - src/styles for CSS modules
 
 2. **Component Hierarchy**
+   ```
     - App
-        |- GameContainer
-            |- CharacterDisplay
-            |- CombatArea
-            |  |- ActionButtons
-            |  |- BattleEffects
-            |- StatusPanel
-            |- BattleLog
+      |- GameContainer
+          |- CharacterDisplay
+          |- CombatArea
+          |  |- ActionButtons
+          |  |- BattleEffects
+          |- StatusPanel
+          |- BattleLog
+      ```
 
-3. **State Management**
+4. **State Management**
 
-    ```interface GameState {
+    ```
+    interface GameState {
     player: {
         hp: number;
         maxHp: number;
@@ -42,10 +45,12 @@ This project is a simple core loop of a turn based game.
     };
     turn: 'player' | 'enemy';
     battleLog: BattleEvent[];
-    }```
+    }
+    ```
 
-4. **Combat System**
+5. **Combat System**
 
+   ```
     export class CombatSystem {
     calculateDamage(attacker: Unit, defender: Unit): number {
         const base = attacker.attack - defender.defense;
@@ -60,9 +65,11 @@ This project is a simple core loop of a turn based game.
         });
     }
     }
+   ```
 
-5. **Game Actions**
+6. **Game Actions**
 
+    ```
     export const gameActions = {
     attack: (state: GameState): GameState => {
         const damage = combat.calculateDamage(state.player, state.enemy);
@@ -83,6 +90,8 @@ This project is a simple core loop of a turn based game.
         // Add defense buff logic
     }
     };
+
+   ```
 
 ## Key Decisions
 
