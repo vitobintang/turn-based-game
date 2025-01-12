@@ -1,4 +1,4 @@
-# Character Animation Project
+# Simple Turn Based Game
 
 ## Overview
 
