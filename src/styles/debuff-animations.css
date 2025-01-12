@@ -1,0 +1,36 @@
+@keyframes debuff-pulse {
+  0% { 
+    background-color: rgba(147, 51, 234, 0.1);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.2);
+  }
+  50% { 
+    background-color: rgba(147, 51, 234, 0.2);
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.4);
+  }
+  100% { 
+    background-color: rgba(147, 51, 234, 0.1);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.2);
+  }
+}
+
+.debuff-aura {
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  opacity: 0.5;
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+
+.debuff-aura.weakness {
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, rgba(147, 51, 234, 0) 70%);
+  animation: debuff-pulse 2s ease-in-out infinite;
+}
+
+.debuff-icon {
+  transition: all 0.3s ease;
+}
+
+.debuff-icon:hover {
+  transform: scale(1.05);
+}
